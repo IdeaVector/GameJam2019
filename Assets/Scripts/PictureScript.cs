@@ -7,10 +7,21 @@ public class PictureScript : MonoBehaviour
     public GameObject newSprite;
     private SpriteRenderer rend;
     public Color color;
+    private bool isColorSetted = false;
 
     void Start()
     {
-        SetColor(Color.red);
+        List<Color> colorList = new List<Color>();
+        colorList.Add(Color.red);
+        colorList.Add(Color.white);
+        colorList.Add(Color.green);
+        colorList.Add(Color.blue);
+        Color currentColor = colorList[Random.Range(0, colorList.Count)];
+        SetColor(currentColor);
+    }
+
+    private void Update()
+    {
     }
 
     public void DrawPicture()
@@ -24,6 +35,7 @@ public class PictureScript : MonoBehaviour
         color = newColor;
         rend = GetComponent<SpriteRenderer>();
         rend.color = newColor;
+        isColorSetted = true;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
