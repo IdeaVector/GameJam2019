@@ -24,6 +24,8 @@ public class GameManagerScript : MonoBehaviour
 
         NextFace();
         NextFace();
+        NextFace();
+        NextFace();
     }
 
     public void NextFace()
