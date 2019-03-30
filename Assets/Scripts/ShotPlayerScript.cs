@@ -14,8 +14,8 @@ public class ShotPlayerScript : MonoBehaviour
     public Transform zRotate; // объект для вращения по оси Z
 
     // ограничение вращения
-    public float minAngle = -40;
-    public float maxAngle = 40;
+    public float minAngle = -80;
+    public float maxAngle = 80;
 
     private float curTimeout;
 
@@ -33,6 +33,14 @@ public class ShotPlayerScript : MonoBehaviour
         lookPos = lookPos - transform.position;
         float angle = Mathf.Atan2(lookPos.y, lookPos.x) * Mathf.Rad2Deg;
         angle = Mathf.Clamp(angle, minAngle, maxAngle);
+        if (angle > maxAngle)
+        {
+            angle = maxAngle - 1f;
+        }
+        if (angle < minAngle)
+        {
+            angle = minAngle + 1f;
+        }
         zRotate.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
     }
 

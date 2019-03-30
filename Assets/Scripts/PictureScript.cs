@@ -21,6 +21,7 @@ public class PictureScript : MonoBehaviour
 
     public void SetColor(Color newColor)
     {
+        color = newColor;
         rend = GetComponent<SpriteRenderer>();
         rend.color = newColor;
     }
