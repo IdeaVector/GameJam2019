@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Pictures
+  - Blat
   layers:
   - Default
   - TransparentFX

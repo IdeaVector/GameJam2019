@@ -10,7 +10,7 @@ public class PlayerControllerScript : MonoBehaviour
     private bool isGround = false;
     public Transform groundCheck;
     private float groundRadius = 0.2f;
-    private float speed = 5f;
+    public float speed = 5f;
     public LayerMask whatIsGround;
     public float jumpForce = 100f;
     // Start is called before the first frame update
