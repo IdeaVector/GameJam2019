@@ -8,7 +8,6 @@ public class PictureScript : MonoBehaviour
     private SpriteRenderer rend;
     public Color color;
     private bool isColorSetted = false;
-    public Color[] colors;
 
     void Start()
     {
