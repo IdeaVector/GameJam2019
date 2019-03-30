@@ -5,6 +5,7 @@ using UnityEngine;
 public class SpawnGroundScript : MonoBehaviour
 {
 
+    [SerializeField]
     public GameObject[] groundObj;
     public float spawnMinTime = 1f;
     public float spawnMaxTime = 2f;
