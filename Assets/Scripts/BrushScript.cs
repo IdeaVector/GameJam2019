@@ -6,13 +6,13 @@ using UnityEngine;
 
 public class BrushScript : MonoBehaviour
 {
-    public Color color = Color.white;
-    private Renderer rend;
+    public Color color;
+    private SpriteRenderer rend;
 
     void Start()
     {
-        rend = GetComponent<Renderer>();
-        rend.material.color = color; 
+        rend = GetComponent<SpriteRenderer>();
+        rend.color = color;
         Destroy(gameObject, 3);
     }
 

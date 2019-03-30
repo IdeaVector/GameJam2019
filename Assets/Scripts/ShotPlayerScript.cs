@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class ShotPlayerScript : MonoBehaviour
 {
+    public Color currentColor = Color.green;
     public float speed = 10; // скорость пули
-    public Rigidbody2D bullet; // префаб нашей пули
+    public GameObject bulletSprite;
+    private Rigidbody2D bullet; // префаб нашей пули
     public Transform gunPoint; // точка рождения
     public float fireRate = 1; // скорострельность
 
@@ -19,6 +21,8 @@ public class ShotPlayerScript : MonoBehaviour
 
     void Start()
     {
+        bullet = bulletSprite.GetComponent<Rigidbody2D>();
+        setBrushColor(Color.green);
     }
 
     void SetRotation()
@@ -42,8 +46,24 @@ public class ShotPlayerScript : MonoBehaviour
         {
             curTimeout = 100;
         }
-
         if (zRotate) SetRotation();
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            setBrushColor(Color.green);
+        }
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            setBrushColor(Color.red);
+        }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            setBrushColor(Color.blue);
+        }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            setBrushColor(Color.white);
+        }
     }
 
     void Fire()
@@ -56,5 +76,12 @@ public class ShotPlayerScript : MonoBehaviour
             clone.velocity = transform.TransformDirection(gunPoint.right * speed);
             clone.transform.right = gunPoint.right;
         }
+    }
+
+    private void setBrushColor(Color newColor)
+    {
+        currentColor = newColor;
+        BrushScript script = bulletSprite.GetComponent<BrushScript>();
+        script.color = currentColor;
     }
 }
