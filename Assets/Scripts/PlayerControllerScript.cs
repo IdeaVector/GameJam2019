@@ -12,6 +12,7 @@ public class PlayerControllerScript : MonoBehaviour
     private float groundRadius = 0.2f;
     private float speed = 5f;
     public LayerMask whatIsGround;
+    public float jumpForce = 100f;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,10 +21,10 @@ public class PlayerControllerScript : MonoBehaviour
     }
     private void Update()
     {
-        if (isGround && Input.GetKeyDown(KeyCode.Space))
+        if ( Input.GetKeyDown(KeyCode.Space))
         {
             anim.SetBool("Ground", false);
-            rb2d.AddForce(new Vector2(0, 600));
+            rb2d.velocity = new Vector2(rb2d.velocity.x, jumpForce);
         }
     }
     private void FixedUpdate()
