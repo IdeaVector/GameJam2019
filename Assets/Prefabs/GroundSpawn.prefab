@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 296529910176441042}
   - component: {fileID: 296529910176441053}
   - component: {fileID: 296529910176441052}
-  - component: {fileID: 1707882868713673045}
+  - component: {fileID: 296529910031282668}
   m_Layer: 0
   m_Name: SpawnGround
   m_TagString: Untagged
@@ -93,7 +93,7 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1707882868713673045
+--- !u!114 &296529910031282668
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -105,3 +105,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd685f0866e92e5439b4f63249d96cae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  groundObj:
+  - {fileID: 7117976939308434220, guid: cddad89f5a1cf9f40bc41792eed0d5b4, type: 3}
+  - {fileID: 6514641598695492107, guid: f04fec6a874d4c74b82afbccee0a33fe, type: 3}
+  - {fileID: 3463091366894583639, guid: a11a5002b6f86524784f8be19c24b832, type: 3}
+  spawnMinTime: 1
+  spawnMaxTime: 2

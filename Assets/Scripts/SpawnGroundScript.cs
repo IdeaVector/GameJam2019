@@ -19,6 +19,6 @@ public class SpawnGroundScript : MonoBehaviour
     void Spawn()
     {
         Instantiate(groundObj[Random.Range(0, groundObj.GetLength(0))], transform.position, Quaternion.identity);
-        invoke("Spawn", Random.Range(spawnMinTime, spawnMaxTime));
+        Invoke("Spawn", Random.Range(spawnMinTime, spawnMaxTime));
     }
 }
