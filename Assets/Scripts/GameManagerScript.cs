@@ -11,6 +11,7 @@ public class GameManagerScript : MonoBehaviour
     public Sprite defaultFace;
     public Sprite oldFace;
     private int ageIndex = 0;
+    private int age = 20;
 
     private List<Sprite> spriteList;
 
@@ -21,11 +22,6 @@ public class GameManagerScript : MonoBehaviour
         spriteList.Add(middleFace);
         spriteList.Add(defaultFace);
         spriteList.Add(oldFace);
-
-        NextFace();
-        NextFace();
-        NextFace();
-        NextFace();
     }
 
     public void NextFace()
