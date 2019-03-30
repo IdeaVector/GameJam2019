@@ -177,6 +177,11 @@ MonoBehaviour:
   newSprite: {fileID: 1416983316849040454, guid: 715d90944cec2fe46be3594ccd6fa237,
     type: 3}
   color: {r: 0, g: 0, b: 0, a: 0}
+  colors:
+  - {r: 1, g: 1, b: 1, a: 0}
+  - {r: 1, g: 0, b: 0, a: 0}
+  - {r: 0, g: 1, b: 0, a: 0}
+  - {r: 0, g: 0, b: 1, a: 0}
 --- !u!61 &648417935002270734
 BoxCollider2D:
   m_ObjectHideFlags: 0
