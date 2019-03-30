@@ -10,15 +10,30 @@ public class PictureScript : MonoBehaviour
 
     void Start()
     {
-        
-        ////color = Color.red;
-        //Sprite sprite = GetComponent<Sprite>();
-        //sprite = newSprite.GetComponent<SpriteRenderer>().sprite;
-        ////transform.GetComponentInChildren<SpriteRenderer>().color = Color.green;
+        SetColor(Color.red);
     }
-    
-    void Update()
+
+    public void DrawPicture()
     {
-        
+        rend = GetComponent<SpriteRenderer>();
+        rend.sortingOrder = 0;
+    }
+
+    public void SetColor(Color newColor)
+    {
+        rend = GetComponent<SpriteRenderer>();
+        rend.color = newColor;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Blat")
+        {
+            BrushScript script = collision.GetComponent<BrushScript>();
+            if (script.color == color)
+            {
+                DrawPicture();
+            }
+        }
     }
 }
