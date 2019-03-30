@@ -18,19 +18,6 @@ public class BrushScript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D coll)
     {
-        if (!coll.isTrigger) // чтобы пуля не реагировала на триггер
-        {
-            switch (coll.tag)
-            {
-                case "Enemy_1":
-                    // что-то...
-                    break;
-                case "Enemy_2":
-                    // что-то еще...
-                    break;
-            }
-
-            Destroy(gameObject);
-        }
+        Destroy(gameObject);
     }
 }
