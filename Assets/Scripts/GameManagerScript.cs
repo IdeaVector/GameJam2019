@@ -37,6 +37,9 @@ public class GameManagerScript : MonoBehaviour
         CursorMode cursorMode = CursorMode.Auto;
         Vector2 hotSpot = Vector2.zero;
         Cursor.SetCursor(cursorTexture, hotSpot, cursorMode);
+
+        PlayerPrefs.SetInt("Painted", 0);
+        PlayerPrefs.SetInt("Unpainted", 0);
     }
 
 

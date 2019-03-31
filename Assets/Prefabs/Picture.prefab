@@ -309,5 +309,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj1: {fileID: 1416983316849040454, guid: 715d90944cec2fe46be3594ccd6fa237, type: 3}
-  obj2: {fileID: 1416983316849040454, guid: 20fdad64a3377b5478ea218788fdb001, type: 3}
-  obj3: {fileID: 1416983316849040454, guid: ab09d466f8521884fb50c87380189fec, type: 3}
+  obj2: {fileID: 2672368111620518997, guid: d22636fdbb51d2742a8c12fedeb6f556, type: 3}
+  obj3: {fileID: 2672368111620518997, guid: 51735107c3645064095f6f76e8b660f9, type: 3}
