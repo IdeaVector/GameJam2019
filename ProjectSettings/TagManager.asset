@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Pictures
   - Blat
+  - imp
   layers:
   - Default
   - TransparentFX

@@ -7,7 +7,7 @@ public class PlayerControllerScript : MonoBehaviour
    // private Vector2 speed = new Vector2(2,0);
     private Rigidbody2D rb2d;
     private Animator anim;
-    private bool isGround = false;
+    public bool isGround = false;
     public Transform groundCheck;
     private float groundRadius = 0.2f;
     public float speed = 5f;
@@ -28,7 +28,7 @@ public class PlayerControllerScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && extremJump > 0)
         {
             anim.SetBool("Ground", false);
-            rb2d.AddForce(new Vector2(0, 600));
+            rb2d.AddForce(new Vector2(rb2d.velocity.x, 1000));
             extremJump--;
         }
     }
