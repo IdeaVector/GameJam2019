@@ -49,7 +49,7 @@ public class GameManagerScript : MonoBehaviour
         ageIndex++;
         if (ageIndex > 3)
         {
-            SceneManager.LoadScene("Menu");
+            SceneManager.LoadScene("EndGame");
         }
         if (ageIndex <= 3)
         currentSprite.GetComponent<SpriteRenderer>().sprite = spriteList[ageIndex];
