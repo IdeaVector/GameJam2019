@@ -16,6 +16,10 @@ public class PaintingDestroyScript : MonoBehaviour
                 PictureScript script = colorBox.GetComponent<PictureScript>();
                 if(!script.isPainted)
                 {
+                    int score = PlayerPrefs.GetInt("Unpainted");
+                    score++;
+                    PlayerPrefs.SetInt("Unpainted", score);
+                    print(PlayerPrefs.GetInt("Unpainted"));
                     Destroy(gameObject);
                 }   
             }

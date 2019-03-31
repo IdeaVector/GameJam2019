@@ -15,6 +15,7 @@ public class SpawnGroundScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //pictures = new List<GameObject>();
         for (int i = 0; i < Random.Range(0, 3); i++)
         {
             Instantiate(picture, new Vector2(transform.position.x, transform.position.y) + new Vector2(Random.Range(-GetComponent<BoxCollider2D>().bounds.size.x / 4, GetComponent<BoxCollider2D>().bounds.size.x / 4), Random.Range(1.0f, 6.0f)), Quaternion.identity);

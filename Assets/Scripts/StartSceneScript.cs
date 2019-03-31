@@ -36,12 +36,16 @@ public class StartSceneScript : MonoBehaviour
             firstLabel.color = color;
             secondLabel.color = color;
             thirdLabel.color = color;
-            //fouthLabel.color = color;
         }
     }
 
     public void OnButtonClick()
     {
         SceneManager.LoadScene("Main");
+    }
+
+    public void GameOver()
+    {
+        SceneManager.LoadScene("Menu");
     }
 }

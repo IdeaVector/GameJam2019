@@ -16,8 +16,13 @@ public class GameManagerScript : MonoBehaviour
     public Text text;
     public Texture2D cursorTexture;
 
+    public Text gameText;
+    public GameObject deathObj;
+
     private int ageIndex = 0;
-    private int age = 20;
+    private int age =20;
+    private bool isFlashing = false;
+    private float timer = 0f;
 
     private List<Sprite> spriteList;
     private bool isWantToKillMutherfucker = false;
@@ -37,6 +42,11 @@ public class GameManagerScript : MonoBehaviour
         CursorMode cursorMode = CursorMode.Auto;
         Vector2 hotSpot = Vector2.zero;
         Cursor.SetCursor(cursorTexture, hotSpot, cursorMode);
+
+        PlayerPrefs.SetInt("Painted", 0);
+        PlayerPrefs.SetInt("Unpainted", 0);
+
+        hideDeath();
     }
 
 
@@ -46,7 +56,7 @@ public class GameManagerScript : MonoBehaviour
         ageIndex++;
         if (ageIndex > 3)
         {
-            SceneManager.LoadScene("Menu");
+            SceneManager.LoadScene("EndGame");
         }
         if (ageIndex <= 3)
         currentSprite.GetComponent<SpriteRenderer>().sprite = spriteList[ageIndex];
@@ -67,6 +77,7 @@ public class GameManagerScript : MonoBehaviour
         if (ageIndex == 2 && age >= 65)
         {
             NextFace();
+            showDeath();
         }
         if (ageIndex == 3 && age >= 80)
         {
@@ -93,6 +104,25 @@ public class GameManagerScript : MonoBehaviour
                 counter = 0;
             }
         }
+
+        if (isFlashing)
+        {
+            timer += Time.deltaTime;
+
+            if (timer >= 0.5)
+            {
+                Color color = gameText.GetComponent<Text>().color;
+                color.a = 0f;
+                gameText.GetComponent<Text>().color = color;
+            }
+            if (timer >= 1)
+            {
+                Color color = gameText.GetComponent<Text>().color;
+                color.a = 100f;
+                gameText.GetComponent<Text>().color = color;
+                timer = 0;
+            }
+        }
     }
 
     public void killMatherfucker(int coef)
@@ -105,5 +135,27 @@ public class GameManagerScript : MonoBehaviour
     {
         killCoef = 1;
         isWantToKillMutherfucker = false;
+    }
+
+    void showDeath()
+    {
+        Color color;
+        color = gameText.color;
+        color.a = 100f;
+        gameText.color = color;
+        gameText.text = "Твое время на исходе...";
+        deathObj.SetActive(true);
+        isFlashing = true;
+
+    }
+
+    void hideDeath()
+    {
+        Color color;
+        color = gameText.color;
+        color.a = 0f;
+        gameText.color = color;
+        gameText.text = "Твое время на исходе...";
+        deathObj.SetActive(false);
     }
 }
