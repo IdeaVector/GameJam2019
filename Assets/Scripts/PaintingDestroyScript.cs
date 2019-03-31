@@ -19,7 +19,6 @@ public class PaintingDestroyScript : MonoBehaviour
                     int score = PlayerPrefs.GetInt("Unpainted");
                     score++;
                     PlayerPrefs.SetInt("Unpainted", score);
-                    print(PlayerPrefs.GetInt("Unpainted"));
                     Destroy(gameObject);
                 }   
             }

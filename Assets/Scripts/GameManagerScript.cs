@@ -14,7 +14,6 @@ public class GameManagerScript : MonoBehaviour
     public Sprite oldFace;
 
     public Text text;
-    public Texture2D cursorTexture;
 
     public Text gameText;
     public GameObject deathObj;
@@ -39,10 +38,6 @@ public class GameManagerScript : MonoBehaviour
 
     void Awake()
     {
-        CursorMode cursorMode = CursorMode.Auto;
-        Vector2 hotSpot = Vector2.zero;
-        Cursor.SetCursor(cursorTexture, hotSpot, cursorMode);
-
         PlayerPrefs.SetInt("Painted", 0);
         PlayerPrefs.SetInt("Unpainted", 0);
 
