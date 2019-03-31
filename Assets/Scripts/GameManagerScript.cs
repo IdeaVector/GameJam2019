@@ -78,7 +78,7 @@ public class GameManagerScript : MonoBehaviour
                 AddAge(killCoef);
             }
             counter++;
-            if (counter >= 60)
+            if (counter >= 10)
             {
                 counter = 0;
             }
