@@ -85,13 +85,13 @@ public class GameManagerScript : MonoBehaviour
         }
     }
 
-    public void killMutherfucker(int coef)
+    public void killMatherfucker(int coef)
     {
         killCoef = coef;
         isWantToKillMutherfucker = true;
     }
 
-    public void saveMutherfucker()
+    public void saveMatherfucker()
     {
         killCoef = 1;
         isWantToKillMutherfucker = false;
