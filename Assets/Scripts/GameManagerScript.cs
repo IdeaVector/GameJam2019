@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManagerScript : MonoBehaviour
 {
     public Image faceImage;
+    public GameObject currentSprite;
     public Sprite yangFace;
     public Sprite middleFace;
     public Sprite defaultFace;
@@ -27,6 +29,12 @@ public class GameManagerScript : MonoBehaviour
     public void NextFace()
     {
         faceImage.sprite = spriteList[ageIndex];
+        currentSprite.GetComponent<SpriteRenderer>().sprite = spriteList[ageIndex];
         ageIndex++;
+
+        if(ageIndex >3)
+        {
+            SceneManager.LoadScene("Menu");
+        }
     }
 }
