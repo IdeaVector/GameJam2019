@@ -13,7 +13,7 @@ public class BrushScript : MonoBehaviour
     {
         rend = GetComponent<SpriteRenderer>();
         rend.color = color;
-        Destroy(gameObject, 3);
+        Destroy(gameObject, 6);
     }
 
     void OnTriggerEnter2D(Collider2D coll)

@@ -111,7 +111,7 @@ public class DrawingScript : MonoBehaviour
         m_LineRenderer.positionCount = 0;
         m_LineRenderer.material = new Material(Shader.Find("Sprites/Default"));
         m_LineRenderer.startColor = Color.blue;
-        m_LineRenderer.endColor = Color.blue;
+        m_LineRenderer.endColor = Color.red;
         m_LineRenderer.startWidth = 0.2f;
         m_LineRenderer.endWidth = 0.2f;
         m_LineRenderer.useWorldSpace = true;
