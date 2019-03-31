@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PictureScript : MonoBehaviour
 {
-    public GameObject newSprite;
     private SpriteRenderer rend;
     public Color color;
     private bool isColorSetted = false;
