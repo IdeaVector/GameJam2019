@@ -36,7 +36,7 @@ public class StartSceneScript : MonoBehaviour
             firstLabel.color = color;
             secondLabel.color = color;
             thirdLabel.color = color;
-            fouthLabel.color = color;
+            //fouthLabel.color = color;
         }
     }
 
