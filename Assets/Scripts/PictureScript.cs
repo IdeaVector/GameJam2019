@@ -21,10 +21,6 @@ public class PictureScript : MonoBehaviour
         SetColor(currentColor);
     }
 
-    private void Update()
-    {
-    }
-
     public void DrawPicture()
     {
         rend = GetComponent<SpriteRenderer>();
@@ -46,6 +42,7 @@ public class PictureScript : MonoBehaviour
             BrushScript script = collision.GetComponent<BrushScript>();
             if (script.color == color)
             {
+                isPainted = true;
                 DrawPicture();
             }
         }
@@ -53,6 +50,11 @@ public class PictureScript : MonoBehaviour
 
     private void OnDestroy()
     {
-        
+        GameObject gameManager = GameObject.FindGameObjectWithTag("GameManager");
+        if (gameManager != null)
+        {
+            GameManagerScript script = gameManager.GetComponent<GameManagerScript>();
+            script.AddAge(5);
+        }
     }
 }
