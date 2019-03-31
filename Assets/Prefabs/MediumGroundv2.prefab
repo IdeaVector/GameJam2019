@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3509979282132197384}
   - component: {fileID: 3509979282132197382}
   - component: {fileID: 3509979282132197383}
+  - component: {fileID: 7819333924217915205}
   m_Layer: 8
   m_Name: MediumGroundv2
   m_TagString: Untagged
@@ -106,3 +107,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 10.24, y: 0.64}
   m_EdgeRadius: 0
+--- !u!114 &7819333924217915205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3509979282132197385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd685f0866e92e5439b4f63249d96cae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundObj:
+  - {fileID: 7620356203672766872, guid: 0a4532905a2c1264aa3760f17eb70cc6, type: 3}
+  - {fileID: 3509979282132197385}
+  spawnMinTime: 1
+  spawnMaxTime: 2
