@@ -9,6 +9,7 @@ TagManager:
   - imp
   - GameManager
   - Earth
+  - rainbowLine
   layers:
   - Default
   - TransparentFX
