@@ -108,6 +108,7 @@ public class DrawingScript : MonoBehaviour
     {
         m_LineRenderer = gameObject.AddComponent<LineRenderer>();
         gameObject.layer = 8;
+        gameObject.tag = "rainbowLine";
         m_LineRenderer.positionCount = 0;
         m_LineRenderer.material = new Material(Shader.Find("Sprites/Default"));
         m_LineRenderer.startColor = Color.blue;
