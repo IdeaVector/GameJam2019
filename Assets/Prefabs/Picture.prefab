@@ -69,7 +69,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1576887057
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 152f8fdc055a8954d8d73ce7fd8e2867, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -163,7 +163,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1576887057
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 1
   m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -188,8 +188,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1cbed8a0f0e3d44ab1c487433886b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 1416983316849040454, guid: 715d90944cec2fe46be3594ccd6fa237,
-    type: 3}
   color: {r: 0, g: 0, b: 0, a: 0}
   isPainted: 0
 --- !u!61 &648417935002270734
@@ -228,6 +226,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8066982128139636737}
   - component: {fileID: 5948336810479468209}
+  - component: {fileID: 1536683597447327106}
   m_Layer: 0
   m_Name: MonoSprite
   m_TagString: Untagged
@@ -284,9 +283,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1576887057
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 861dc2e0b2c58dc41adc879c1d4d6406, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -294,6 +293,21 @@ SpriteRenderer:
   m_Size: {x: 2.5, y: 3.73}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1536683597447327106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8634244978017844517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f20d944a23486664285545c5a3a6b39a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obj1: {fileID: 1416983316849040454, guid: 715d90944cec2fe46be3594ccd6fa237, type: 3}
+  obj2: {fileID: 2672368111620518997, guid: d22636fdbb51d2742a8c12fedeb6f556, type: 3}
+  obj3: {fileID: 2672368111620518997, guid: 51735107c3645064095f6f76e8b660f9, type: 3}

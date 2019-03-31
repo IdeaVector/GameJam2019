@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PictureScript : MonoBehaviour
 {
-    public GameObject newSprite;
     private SpriteRenderer rend;
     public Color color;
     private bool isColorSetted = false;
@@ -42,6 +41,9 @@ public class PictureScript : MonoBehaviour
             BrushScript brushScript = collision.GetComponent<BrushScript>();
             if (brushScript.color == color)
             {
+                int score = PlayerPrefs.GetInt("Painted");
+                score++;
+                PlayerPrefs.SetInt("Painted", score);
                 isPainted = true;
                 DrawPicture();
             }

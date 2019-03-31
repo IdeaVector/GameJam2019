@@ -37,6 +37,9 @@ public class GameManagerScript : MonoBehaviour
         CursorMode cursorMode = CursorMode.Auto;
         Vector2 hotSpot = Vector2.zero;
         Cursor.SetCursor(cursorTexture, hotSpot, cursorMode);
+
+        PlayerPrefs.SetInt("Painted", 0);
+        PlayerPrefs.SetInt("Unpainted", 0);
     }
 
 
@@ -46,7 +49,7 @@ public class GameManagerScript : MonoBehaviour
         ageIndex++;
         if (ageIndex > 3)
         {
-            SceneManager.LoadScene("Menu");
+            SceneManager.LoadScene("EndGame");
         }
         if (ageIndex <= 3)
         currentSprite.GetComponent<SpriteRenderer>().sprite = spriteList[ageIndex];
