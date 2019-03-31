@@ -370,15 +370,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: GroundSpawnv2 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 296529910176441055, guid: e95495bc48afec04394ad4445e3c892c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 296529910176441043, guid: e95495bc48afec04394ad4445e3c892c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 19
+      value: 12.07
       objectReference: {fileID: 0}
     - target: {fileID: 296529910176441043, guid: e95495bc48afec04394ad4445e3c892c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5
+      value: 0.76
       objectReference: {fileID: 0}
     - target: {fileID: 296529910176441043, guid: e95495bc48afec04394ad4445e3c892c,
         type: 3}
@@ -438,12 +443,12 @@ PrefabInstance:
     - target: {fileID: 296529910031282668, guid: e95495bc48afec04394ad4445e3c892c,
         type: 3}
       propertyPath: spawnMinTime
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 296529910031282668, guid: e95495bc48afec04394ad4445e3c892c,
         type: 3}
       propertyPath: spawnMaxTime
-      value: 7
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 296529910031282668, guid: e95495bc48afec04394ad4445e3c892c,
         type: 3}
@@ -471,6 +476,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GroundSpawnv2 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 296529910176441055, guid: e95495bc48afec04394ad4445e3c892c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 296529910176441043, guid: e95495bc48afec04394ad4445e3c892c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -479,7 +489,7 @@ PrefabInstance:
     - target: {fileID: 296529910176441043, guid: e95495bc48afec04394ad4445e3c892c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 296529910176441043, guid: e95495bc48afec04394ad4445e3c892c,
         type: 3}
@@ -539,12 +549,12 @@ PrefabInstance:
     - target: {fileID: 296529910031282668, guid: e95495bc48afec04394ad4445e3c892c,
         type: 3}
       propertyPath: spawnMinTime
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 296529910031282668, guid: e95495bc48afec04394ad4445e3c892c,
         type: 3}
       propertyPath: spawnMaxTime
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e95495bc48afec04394ad4445e3c892c, type: 3}
@@ -835,7 +845,7 @@ GameObject:
   - component: {fileID: 1125022744}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1008,7 +1018,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   groundCheck: {fileID: 2078976461}
-  speed: 1
+  speed: 5
   whatIsGround:
     serializedVersion: 2
     m_Bits: 256
@@ -1379,6 +1389,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GroundSpawnv2
+      objectReference: {fileID: 0}
+    - target: {fileID: 296529910176441055, guid: e95495bc48afec04394ad4445e3c892c,
+        type: 3}
+      propertyPath: m_TagString
+      value: imp
+      objectReference: {fileID: 0}
+    - target: {fileID: 296529910176441055, guid: e95495bc48afec04394ad4445e3c892c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 296529910176441043, guid: e95495bc48afec04394ad4445e3c892c,
         type: 3}
