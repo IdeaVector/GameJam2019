@@ -11,6 +11,7 @@ public class SpawnGroundScript : MonoBehaviour
     public float spawnMinTime = 1f;
     public float spawnMaxTime = 2f;
     bool alreadySpawned = false;
+    public GameObject picture;
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +34,7 @@ public class SpawnGroundScript : MonoBehaviour
         float posY = transform.position.y + Random.Range(-6.0f, 6.0f);
         Vector2 spawnPosition = new Vector2(posX, posY);
         tmpObject = Instantiate(cr_gobj, spawnPosition, Quaternion.identity);
+       
         alreadySpawned = true;
         //Invoke("Spawn", Random.Range(spawnMinTime, spawnMaxTime));
     }

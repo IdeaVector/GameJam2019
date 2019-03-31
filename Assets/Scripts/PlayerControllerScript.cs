@@ -39,7 +39,7 @@ public class PlayerControllerScript : MonoBehaviour
             extremJump--;
         }
 
-        if (time >= 4)
+        if (time >= 3)
         {
             man = GameObject.FindGameObjectWithTag("GameManager");
             man.GetComponent<GameManagerScript>().killMatherfucker(1);
