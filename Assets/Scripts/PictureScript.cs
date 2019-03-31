@@ -8,6 +8,7 @@ public class PictureScript : MonoBehaviour
     private SpriteRenderer rend;
     public Color color;
     private bool isColorSetted = false;
+    public bool isPainted = false;
 
     void Start()
     {
@@ -48,5 +49,10 @@ public class PictureScript : MonoBehaviour
                 DrawPicture();
             }
         }
+    }
+
+    private void OnDestroy()
+    {
+        
     }
 }
