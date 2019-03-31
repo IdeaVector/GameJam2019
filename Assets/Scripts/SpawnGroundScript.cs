@@ -24,7 +24,7 @@ public class SpawnGroundScript : MonoBehaviour
     void Update()
     {
         float playerpos = GameObject.FindGameObjectWithTag("Player").transform.position.x;
-        if (Mathf.Abs(transform.position.x - playerpos) < 10 && alreadySpawned == false)
+        if (Mathf.Abs(transform.position.x - playerpos) < 50 && alreadySpawned == false)
         {
             Spawn();
         }
