@@ -39,11 +39,20 @@ public class PictureScript : MonoBehaviour
     {
         if (collision.tag == "Blat")
         {
-            BrushScript script = collision.GetComponent<BrushScript>();
-            if (script.color == color)
+            BrushScript brushScript = collision.GetComponent<BrushScript>();
+            if (brushScript.color == color)
             {
                 isPainted = true;
                 DrawPicture();
+            }
+            else
+            {
+                GameObject gameManager = GameObject.FindGameObjectWithTag("GameManager");
+                if (gameManager != null)
+                {
+                    GameManagerScript gameScript = gameManager.GetComponent<GameManagerScript>();
+                    gameScript.AddAge(1);
+                }
             }
         }
     }
