@@ -71,7 +71,7 @@ public class GameManagerScript : MonoBehaviour
     {
         if (counter == 0)
         {
-            AddAge(3);
+            AddAge(0);
         }
         counter++;
         if (counter >= 40)

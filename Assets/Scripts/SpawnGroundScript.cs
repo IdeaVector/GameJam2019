@@ -19,7 +19,7 @@ public class SpawnGroundScript : MonoBehaviour
 
     void Spawn()
     {
-        Vector2 spawnPosition = new Vector2(transform.position.x, transform.position.y + Random.Range(-3.0f, 3.0f));
+        Vector2 spawnPosition = new Vector2(transform.position.x, transform.position.y + Random.Range(-2.0f, 2.0f));
         tmpObject = Instantiate(groundObj[Random.Range(0, groundObj.GetLength(0))], spawnPosition, Quaternion.identity);
 
         Invoke("Spawn", Random.Range(spawnMinTime, spawnMaxTime));
