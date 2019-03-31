@@ -19,6 +19,8 @@ public class GameManagerScript : MonoBehaviour
     private int age = 20;
 
     private List<Sprite> spriteList;
+    private bool isWantToKillMutherfucker = false;
+    private int killCoef = 1;
 
     void Start()
     {
@@ -69,14 +71,29 @@ public class GameManagerScript : MonoBehaviour
 
     private void Update()
     {
-        if (counter == 0)
+        if (isWantToKillMutherfucker)
         {
-            AddAge(0);
+            if (counter == 0)
+            {
+                AddAge(killCoef);
+            }
+            counter++;
+            if (counter >= 60)
+            {
+                counter = 0;
+            }
         }
-        counter++;
-        if (counter >= 40)
-        {
-            counter = 0;
-        }
+    }
+
+    public void killMutherfucker(int coef)
+    {
+        killCoef = coef;
+        isWantToKillMutherfucker = true;
+    }
+
+    public void saveMutherfucker()
+    {
+        killCoef = 1;
+        isWantToKillMutherfucker = false;
     }
 }
