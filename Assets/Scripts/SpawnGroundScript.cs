@@ -10,18 +10,30 @@ public class SpawnGroundScript : MonoBehaviour
     private GameObject tmpObject;
     public float spawnMinTime = 1f;
     public float spawnMaxTime = 2f;
+    bool alreadySpawned = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        Spawn();
+    }
+
+    void Update()
+    {
+        float playerpos = GameObject.FindGameObjectWithTag("Player").transform.position.x;
+        if (Mathf.Abs(transform.position.x - playerpos) < 10 && alreadySpawned == false)
+        {
+            Spawn();
+        }
     }
 
     void Spawn()
     {
-        Vector2 spawnPosition = new Vector2(transform.position.x, transform.position.y + Random.Range(-2.0f, 2.0f));
-        tmpObject = Instantiate(groundObj[Random.Range(0, groundObj.GetLength(0))], spawnPosition, Quaternion.identity);
-
-        Invoke("Spawn", Random.Range(spawnMinTime, spawnMaxTime));
+        GameObject cr_gobj = groundObj[Random.Range(0, groundObj.GetLength(0))];
+        float posX = transform.position.x + GetComponent<BoxCollider2D>().bounds.size.x / 2 + Random.Range(0.0f, 6.0f) + cr_gobj.GetComponent<BoxCollider2D>().bounds.size.x / 2;
+        float posY = transform.position.y + Random.Range(-6.0f, 6.0f);
+        Vector2 spawnPosition = new Vector2(posX, posY);
+        tmpObject = Instantiate(cr_gobj, spawnPosition, Quaternion.identity);
+        alreadySpawned = true;
+        //Invoke("Spawn", Random.Range(spawnMinTime, spawnMaxTime));
     }
 }

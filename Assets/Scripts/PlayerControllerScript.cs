@@ -13,6 +13,8 @@ public class PlayerControllerScript : MonoBehaviour
     public float speed = 5f;
     public LayerMask whatIsGround;
     private int extremJump = 0;
+    private float time;
+    private GameObject man;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,12 +26,23 @@ public class PlayerControllerScript : MonoBehaviour
         if(isGround)
         {
             extremJump = 1;
+            time = 0;
+        }
+        else
+        {
+            time += Time.deltaTime;
         }
         if (Input.GetKeyDown(KeyCode.Space) && extremJump > 0)
         {
             anim.SetBool("Ground", false);
-            rb2d.AddForce(new Vector2(rb2d.velocity.x, 1000));
+            rb2d.AddForce(new Vector2(rb2d.velocity.x, 800));
             extremJump--;
+        }
+
+        if (time > 5)
+        {
+            man = GameObject.FindGameObjectWithTag("GameManager");
+            man.GetComponent<GameManagerScript>().killMotherFucker(1);
         }
     }
     private void FixedUpdate()
