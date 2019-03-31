@@ -1,9 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ShotPlayerScript : MonoBehaviour
 {
+    public Button qButton;
+    public Button wButton;
+    public Button eButton;
+    public Button rButton;
+    private List<Button> buttonList;
+
     public Color currentColor = Color.green;
     public float speed = 10; // скорость пули
     public GameObject bulletSprite;
@@ -23,6 +30,14 @@ public class ShotPlayerScript : MonoBehaviour
     {
         bullet = bulletSprite.GetComponent<Rigidbody2D>();
         setBrushColor(Color.green);
+        buttonList = new List<Button>();
+        buttonList.Add(qButton);
+        buttonList.Add(wButton);
+        buttonList.Add(eButton);
+        buttonList.Add(rButton);
+
+        setAllTransparent();
+        setNotTransparent(qButton);
     }
 
     void SetRotation()
@@ -58,18 +73,26 @@ public class ShotPlayerScript : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Q))
         {
+            setAllTransparent();
+            setNotTransparent(qButton);
             setBrushColor(Color.green);
         }
         if (Input.GetKeyDown(KeyCode.W))
         {
+            setAllTransparent();
+            setNotTransparent(wButton);
             setBrushColor(Color.red);
         }
         if (Input.GetKeyDown(KeyCode.E))
         {
+            setAllTransparent();
+            setNotTransparent(eButton);
             setBrushColor(Color.blue);
         }
         if (Input.GetKeyDown(KeyCode.R))
         {
+            setAllTransparent();
+            setNotTransparent(rButton);
             setBrushColor(Color.white);
         }
     }
@@ -91,5 +114,31 @@ public class ShotPlayerScript : MonoBehaviour
         currentColor = newColor;
         BrushScript script = bulletSprite.GetComponent<BrushScript>();
         script.color = currentColor;
+    }
+
+    void setTransparent(Button button)
+    {
+        Color buttonColor = button.colors.normalColor;
+        buttonColor.a = 0f;
+        ColorBlock colors = button.colors;
+        colors.normalColor = buttonColor;
+        button.colors = colors;
+    }
+
+    void setAllTransparent()
+    {
+        foreach (Button button in buttonList)
+        {
+            setTransparent(button);
+        }
+    }
+
+    void setNotTransparent(Button button)
+    {
+        Color buttonColor = button.colors.normalColor;
+        buttonColor.a = 100f;
+        ColorBlock colors = button.colors;
+        colors.normalColor = buttonColor;
+        button.colors = colors;
     }
 }
