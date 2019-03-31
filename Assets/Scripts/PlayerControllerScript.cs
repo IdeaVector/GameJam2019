@@ -15,6 +15,7 @@ public class PlayerControllerScript : MonoBehaviour
     private int extremJump = 0;
     private float time;
     private GameObject man;
+    private bool onPlatform = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -44,7 +45,35 @@ public class PlayerControllerScript : MonoBehaviour
             man = GameObject.FindGameObjectWithTag("GameManager");
             man.GetComponent<GameManagerScript>().killMatherfucker(1);
         }
+
+        float minY = 100000000.0f;
+        foreach(GameObject crEarth in GameObject.FindGameObjectsWithTag("Earth"))
+        {
+            if (crEarth.transform.position.y < minY)
+            {
+                minY = crEarth.transform.position.y;
+            }
+        }
+        if (transform.position.y < minY && onPlatform)
+        {
+            GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManagerScript>().killMatherfucker(1);
+            onPlatform = false;
+        }
+        else
+        {
+            GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManagerScript>().saveMatherfucker();
+            onPlatform = true;
+        }
+
     }
+
+    private void OnDestroy()
+    {
+        Debug.Log(transform.position);
+        Debug.Log("destrrroy");
+        return;
+    }
+
     private void FixedUpdate()
     {
         isGround = Physics2D.OverlapCircle(groundCheck.position, groundRadius, whatIsGround);

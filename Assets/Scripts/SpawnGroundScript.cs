@@ -34,7 +34,7 @@ public class SpawnGroundScript : MonoBehaviour
     void Spawn()
     {
         GameObject cr_gobj = groundObj[Random.Range(0, groundObj.GetLength(0))];
-        float posX = transform.position.x + GetComponent<BoxCollider2D>().bounds.size.x / 2 + Random.Range(0.0f, 6.0f) + cr_gobj.GetComponent<BoxCollider2D>().bounds.size.x / 2;
+        float posX = transform.position.x + GetComponent<BoxCollider2D>().bounds.size.x / 2 + Random.Range(0.0f, 8.0f) + cr_gobj.GetComponent<BoxCollider2D>().bounds.size.x / 2;
         float posY = transform.position.y + Random.Range(-6.0f, 6.0f);
         Vector2 spawnPosition = new Vector2(posX, posY);
         Instantiate(cr_gobj, spawnPosition, Quaternion.identity);
@@ -43,4 +43,5 @@ public class SpawnGroundScript : MonoBehaviour
         //Invoke("Spawn", Random.Range(spawnMinTime, spawnMaxTime));
 
     }
+  
 }

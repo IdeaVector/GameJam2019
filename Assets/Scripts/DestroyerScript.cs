@@ -10,10 +10,6 @@ public class DestroyerScript : MonoBehaviour
         {
             Debug.Break();
         }
-        if (other.gameObject.transform.parent)
-        {
-            Destroy(other.gameObject.transform.parent.gameObject);
-        }
         else
         {
             Destroy(other.gameObject);

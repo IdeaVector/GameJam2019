@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7390957778186830698}
   m_Layer: 8
   m_Name: LargeGroundv2
-  m_TagString: Untagged
+  m_TagString: Earth
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
