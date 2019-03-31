@@ -12,6 +12,7 @@ public class PlayerControllerScript : MonoBehaviour
     private float groundRadius = 0.2f;
     public float speed = 5f;
     public LayerMask whatIsGround;
+    private int extremJump = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,10 +21,15 @@ public class PlayerControllerScript : MonoBehaviour
     }
     private void Update()
     {
-        if (isGround && Input.GetKeyDown(KeyCode.Space))
+        if(isGround)
+        {
+            extremJump = 1;
+        }
+        if (Input.GetKeyDown(KeyCode.Space) && extremJump > 0)
         {
             anim.SetBool("Ground", false);
             rb2d.AddForce(new Vector2(0, 600));
+            extremJump--;
         }
     }
     private void FixedUpdate()
