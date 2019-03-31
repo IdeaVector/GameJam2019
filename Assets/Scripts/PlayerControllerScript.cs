@@ -42,7 +42,7 @@ public class PlayerControllerScript : MonoBehaviour
         if (time > 5)
         {
             man = GameObject.FindGameObjectWithTag("GameManager");
-            man.GetComponent<GameManagerScript>().killMotherFucker(1);
+            man.GetComponent<GameManagerScript>().killMatherfucker(1);
         }
     }
     private void FixedUpdate()
