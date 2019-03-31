@@ -14,6 +14,7 @@ public class GameManagerScript : MonoBehaviour
     public Sprite oldFace;
 
     public Text text;
+    public Texture2D cursorTexture;
 
     private int ageIndex = 0;
     private int age = 20;
@@ -30,6 +31,15 @@ public class GameManagerScript : MonoBehaviour
         spriteList.Add(defaultFace);
         spriteList.Add(oldFace);
     }
+
+    void Awake()
+    {
+        CursorMode cursorMode = CursorMode.Auto;
+        Vector2 hotSpot = Vector2.zero;
+        Cursor.SetCursor(cursorTexture, hotSpot, cursorMode);
+    }
+
+
 
     public void NextFace()
     {

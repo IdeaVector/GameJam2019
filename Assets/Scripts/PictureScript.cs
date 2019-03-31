@@ -21,10 +21,6 @@ public class PictureScript : MonoBehaviour
         SetColor(currentColor);
     }
 
-    private void Update()
-    {
-    }
-
     public void DrawPicture()
     {
         rend = GetComponent<SpriteRenderer>();
@@ -43,16 +39,31 @@ public class PictureScript : MonoBehaviour
     {
         if (collision.tag == "Blat")
         {
-            BrushScript script = collision.GetComponent<BrushScript>();
-            if (script.color == color)
+            BrushScript brushScript = collision.GetComponent<BrushScript>();
+            if (brushScript.color == color)
             {
+                isPainted = true;
                 DrawPicture();
+            }
+            else
+            {
+                GameObject gameManager = GameObject.FindGameObjectWithTag("GameManager");
+                if (gameManager != null)
+                {
+                    GameManagerScript gameScript = gameManager.GetComponent<GameManagerScript>();
+                    gameScript.AddAge(1);
+                }
             }
         }
     }
 
     private void OnDestroy()
     {
-        
+        GameObject gameManager = GameObject.FindGameObjectWithTag("GameManager");
+        if (gameManager != null)
+        {
+            GameManagerScript script = gameManager.GetComponent<GameManagerScript>();
+            script.AddAge(2);
+        }
     }
 }
