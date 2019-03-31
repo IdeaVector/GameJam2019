@@ -124,3 +124,4 @@ MonoBehaviour:
   - {fileID: 3509979282132197385, guid: bd178ec76c02c1442a64b6669cdd77fc, type: 3}
   spawnMinTime: 1
   spawnMaxTime: 2
+  picture: {fileID: 4702187430196185887, guid: de218df0365ef0345a85f186584e4c67, type: 3}
