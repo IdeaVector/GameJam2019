@@ -63,7 +63,7 @@ public class PictureScript : MonoBehaviour
         if (gameManager != null)
         {
             GameManagerScript script = gameManager.GetComponent<GameManagerScript>();
-            script.AddAge(5);
+            script.AddAge(2);
         }
     }
 }
